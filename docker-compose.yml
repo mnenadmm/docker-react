@@ -1,0 +1,11 @@
+version : '3'
+services:
+  web:
+    build: 
+      context: . #ucitava celu aplikaciju
+      dockerfile: Dockerfile.txt #prosledjujemo dockerfile.txt sa drugom extenzijom
+    ports:
+      - "3000:3000"
+    volumes: #dodajemo volumes ne radi na windowsu
+      - /app/node_modules
+      - .:/app
